@@ -1,24 +1,23 @@
 # Your code here
-
-import operator
-
-
 def finder(files, queries):
-    """
-    YOUR CODE HERE
-    """
     # Your code here
-
     dict = {}
-    qict = {}
+    arr = []
+    found = []
     for i, e in enumerate(files):
         dict[e] = i
-    for i, e in enumerate(queries):
-        qict[e] = i
 
-    print(dict)
-    print(qict)
-    # return result
+    for i, q in enumerate(queries):
+        if [val for key, val in dict.items() if q in key]:
+            arr.append(i)
+    urllist = list(dict.keys())
+
+    for i in arr:
+        if i != None:
+            print(i)
+            found.append(urllist[i])
+
+    return(found)
 
 
 if __name__ == "__main__":
@@ -28,7 +27,7 @@ if __name__ == "__main__":
         '/usr/bin/baz'
     ]
     queries = [
-        "foo",
+        'foo',
         "qux",
         "baz"
     ]
