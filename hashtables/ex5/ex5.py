@@ -1,5 +1,6 @@
 # Your code here
 
+import operator
 
 
 def finder(files, queries):
@@ -8,7 +9,16 @@ def finder(files, queries):
     """
     # Your code here
 
-    return result
+    dict = {}
+    qict = {}
+    for i, e in enumerate(files):
+        dict[e] = i
+    for i, e in enumerate(queries):
+        qict[e] = i
+
+    print(dict)
+    print(qict)
+    # return result
 
 
 if __name__ == "__main__":
